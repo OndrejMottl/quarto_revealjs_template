@@ -385,15 +385,17 @@
       margin-right: 0; 
     }
   </style>
-  <script src="presentation_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-  <script src="presentation_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="presentation_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
-  <script src="presentation_files/libs/leaflet-1.3.1/leaflet.js"></script>
-  <link href="presentation_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
-  <script src="presentation_files/libs/proj4-2.6.2/proj4.min.js"></script>
-  <script src="presentation_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-  <link href="presentation_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-  <script src="presentation_files/libs/leaflet-binding-2.2.1/leaflet.js"></script>
+  <script src="presentation_files/libs/htmlwidgets/htmlwidgets.js"></script>
+  <script src="presentation_files/libs/jquery/jquery-3.6.0.min.js"></script>
+  <link href="presentation_files/libs/leaflet/leaflet.css" rel="stylesheet">
+  <script src="presentation_files/libs/leaflet/leaflet.js"></script>
+  <link href="presentation_files/libs/leafletfix/leafletfix.css" rel="stylesheet">
+  <script src="presentation_files/libs/proj4/proj4.min.js"></script>
+  <script src="presentation_files/libs/Proj4Leaflet/proj4leaflet.js"></script>
+  <link href="presentation_files/libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet">
+  <script src="presentation_files/libs/leaflet-binding/leaflet.js"></script>
+  <link href="presentation_files/libs/countdown/countdown.css" rel="stylesheet">
+  <script src="presentation_files/libs/countdown/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -481,14 +483,14 @@
 </section>
 <section id="executable-code" class="slide level2">
 <h2>Executable Code</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(hp, mpg, <span class="at">color =</span> am)) <span class="sc">+</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><div class="footer">
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#executable-code">Executable Code</a></p>
 </div>
 </section>
@@ -502,7 +504,7 @@
 </div><div class="column" style="width:3%;">
 
 </div><div class="column" style="width:62%;">
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table>
 <thead>
@@ -574,6 +576,11 @@
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#multiple-columns">Multiple Columns</a></p>
 </div>
 </section>
+<section id="images" class="slide level2">
+<h2>Images</h2>
+<p>Images can be included in slides using <code>knitr::include_graphics()</code></p>
+
+<img data-src="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/presentations/revealjs/demo/mini/images/kitten-300-200.jpeg" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
 <section id="incremental-lists" class="slide level2">
 <h2>Incremental Lists</h2>
 <p>Lists can optionally be displayed incrementally:</p>
@@ -612,7 +619,7 @@
 <p><span class="strike">Strike</span></p>
 </div>
 <div class="fragment">
-<p><span class="c-primary">Highlight by color</span></p>
+<p><span class="text-color-highlight-secondary">Highlight by color</span></p>
 </div>
 <div class="footer">
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#fragments">Fragments</a></p>
@@ -744,14 +751,18 @@
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot</a></li><li><a href="#tabset-1-2">Data</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img data-src="presentation_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-1-2">
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table style="width:100%;">
 <colgroup>
@@ -1247,10 +1258,10 @@
 <section id="interactive-slides" class="slide level2 smaller" data-transition="slide">
 <h2>Interactive Slides</h2>
 <p>Include Jupyter widgets and htmlwidgets in your presentations</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-2ae2be2b13bff64d8709" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-2ae2be2b13bff64d8709">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-8a49870e961a27b7c816" style="width:100%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-8a49870e961a27b7c816">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="footer">
@@ -1337,6 +1348,14 @@
 
 <img data-src="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/presentations/revealjs/demo/images/speaker-view.png" width="780" class="r-stretch quarto-figure-center"><div class="footer">
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#speaker-view">Speaker View</a></p>
+</div>
+</section>
+<section id="section-2" class="slide level2 title">
+<h2></h2>
+<div class="r-fit-text">
+<p>Excercise 1</p>
+<p>(you can add countdown timer to the slide)</p>
+<p></p><div class="countdown" id="timer_d86e6056" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div><p></p>
 </div>
 <div class="footer footer-default">
 <p>&lt;bit.ly/SSoQE&gt;</p>

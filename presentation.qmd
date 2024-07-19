@@ -11,6 +11,23 @@ format:
     footer: <bit.ly/SSoQE>
 ---
 
+```{r}
+#| label: setup
+#| include: false
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width = 7,
+  fig.height = 5,
+  fig.align = "center",
+  out.width = "100%"
+)
+
+if(!require("countdown")) install.packages("countdown")
+
+library(countdown)
+
+```
+
 ## {.textcenter}
 
 ::: r-fit-text
@@ -140,6 +157,17 @@ knitr::kable(head(mtcars)[,c("mpg",	"cyl", "disp", "hp", "wt")])
 Learn more: [Multiple Columns](https://quarto.org/docs/presentations/revealjs/#multiple-columns)
 :::
 
+## Images
+
+Images can be included in slides using `knitr::include_graphics()`
+
+```{r}
+#| label: knitr-image
+#| width: 700
+#| fig-align: 'center'
+knitr::include_graphics("https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/presentations/revealjs/demo/mini/images/kitten-300-200.jpeg")
+```
+
 ## Incremental Lists
 
 Lists can optionally be displayed incrementally:
@@ -187,7 +215,7 @@ Fade in then semi out
 :::
 
 ::: {.fragment}
-[Highlight by color]{.c-primary}
+[Highlight by color]{.text-color-highlight-secondary}
 :::
 
 ::: footer
@@ -422,4 +450,16 @@ Press `s` (or use the presentation menu) to open speaker view
 
 ::: footer
 Learn more: [Speaker View](https://quarto.org/docs/presentations/revealjs/presenting.html#speaker-view)
+:::
+
+## {.title}
+
+::: r-fit-text
+
+Excercise 1 
+
+(you can add countdown timer to the slide)
+
+`r countdown(minutes = 15)`
+
 :::
