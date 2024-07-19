@@ -1,0 +1,104 @@
+/*-- scss:defaults --*/
+
+@import url(./fonts/league-gothic/league-gothic.css);
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+// Vertical spacing between blocks of text
+$blockMargin: 20px;
+
+// colors
+$black: #000000ff;
+$byzantium: #8f286fff;
+$harvest-gold: #eca400ff;
+$persian-green: #1b998bff;
+$cerulean: #006992ff;
+$white: #ffffffff;
+
+$color-primary: $black !default;
+$color-secondary: $white !default;
+
+$color-high-primary: $byzantium !default;
+$color-high-secondary: $harvest-gold !default;
+$color-high-terciary: $persian-green !default;
+
+$body-color: $color-primary !default;
+$link-color: $color-high-terciary !default;
+$selection-bg: $color-high-terciary !default;
+$code-color:  $color-primary !default;
+
+// Background of the presentation
+$backgroundColor: $color-secondary !default;
+
+// Typography
+$mainFont: "Lato", sans-serif !default;
+$mainFontSize: 30px;
+
+// Headings
+$headingMargin: 0;
+$headingFont: "League Gothic", sans-serif !default;
+$headingColor: $color-high-primary;
+$headingLineHeight: 1.2;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingTextShadow: none;
+$headingFontWeight: normal;
+$heading1TextShadow: $headingTextShadow;
+
+$heading1Size: 3.77em;
+$heading2Size: 2.11em;
+$heading3Size: 1.55em;
+$heading4Size: 1em;
+
+/*-- scss:rules --*/
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.text-color-primary{
+  color: $color-primary;
+}
+
+.text-color-secondary {
+  color: $color-secondary;
+}
+
+.text-color-highlight-primary {
+  color: $color-high-primary;
+}
+
+.text-color-highlight-secondary {
+  color: $color-high-secondary;
+}
+
+.text-color-highlight-terciary {
+  color: $color-high-terciary;
+}
+
+.textcenter {
+  text-align: center;
+}
+
+.reveal .title {
+  background-color: $headingColor;
+  color: $backgroundColor;
+  text-align: center;
+}
+
+.reveal .inverse {
+  color: $color-secondary;
+  background-color: $color-primary;
+}
