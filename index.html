@@ -402,12 +402,9 @@
     <div class="slides">
 
 
-<section id="section" class="slide level2 textcenter">
-<h2></h2>
-<div class="r-fit-text">
-<p><br></p>
-<p><span class="bold">Presentation title</span></p>
-</div>
+<section>
+<section id="presentation-title" class="title-slide slide level1 inverse center">
+<h1><span class="bold r-fit-text">Presentation title</span></h1>
 <p>Author name</p>
 </section>
 <section id="hello-there" class="slide level2">
@@ -420,81 +417,58 @@
 <li>Printing to PDF</li>
 </ul>
 <p>…and much more</p>
+</section></section>
+<section>
+<section id="titlesection-slide" class="title-slide slide level1 title center">
+<h1><span class="bold r-fit-text">Title/Section Slide</span></h1>
+<p>This slide is using the <code>.title</code> class change the background color toS use the <code>$headingColor</code>.</p>
 </section>
-<section id="pretty-code" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Pretty Code</h2>
+<section id="incremental-lists" class="slide level2">
+<h2>Incremental Lists</h2>
+<p>Lists can optionally be displayed incrementally:</p>
+<div>
 <ul>
-<li>Over 20 syntax highlighting themes available</li>
-<li>Default theme optimized for accessibility</li>
+<li class="fragment">First item</li>
+<li class="fragment">Second item</li>
+<li class="fragment">Third item</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="co"># Define a server for the Shiny app</span></span>
-<span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a><span class="cf">function</span>(input, output) {</span>
-<span id="cb1-3" class="hljs-ln-code"><a href="#cb1-3"></a>  </span>
-<span id="cb1-4" class="hljs-ln-code"><a href="#cb1-4"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
-<span id="cb1-5" class="hljs-ln-code"><a href="#cb1-5"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb1-6" class="hljs-ln-code"><a href="#cb1-6"></a>    <span class="co"># Render a barplot</span></span>
-<span id="cb1-7" class="hljs-ln-code"><a href="#cb1-7"></a>  })</span>
-<span id="cb1-8" class="hljs-ln-code"><a href="#cb1-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><br> Insert pauses to make other types of content display incrementally.</p>
 <div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/output-formats/html-code.html#highlighting">Syntax Highlighting</a></p>
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#incremental-lists">Incremental Lists</a></p>
+</div>
 </div>
 </section>
-<section id="code-animations" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Code Animations</h2>
-<ul>
-<li>Over 20 syntax highlighting themes available</li>
-<li>Default theme optimized for accessibility</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="co"># Define a server for the Shiny app</span></span>
-<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a><span class="cf">function</span>(input, output) {</span>
-<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>  </span>
-<span id="cb2-4" class="hljs-ln-code"><a href="#cb2-4"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
-<span id="cb2-5" class="hljs-ln-code"><a href="#cb2-5"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb2-6" class="hljs-ln-code"><a href="#cb2-6"></a>    <span class="co"># Render a barplot</span></span>
-<span id="cb2-7" class="hljs-ln-code"><a href="#cb2-7"></a>    <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
-<span id="cb2-8" class="hljs-ln-code"><a href="#cb2-8"></a>            <span class="at">main=</span>input<span class="sc">$</span>region,</span>
-<span id="cb2-9" class="hljs-ln-code"><a href="#cb2-9"></a>            <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
-<span id="cb2-10" class="hljs-ln-code"><a href="#cb2-10"></a>            <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
-<span id="cb2-11" class="hljs-ln-code"><a href="#cb2-11"></a>  })</span>
-<span id="cb2-12" class="hljs-ln-code"><a href="#cb2-12"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="fragments" class="slide level2">
+<h2>Fragments</h2>
+<p>Incremental text display and animation with fragments:</p>
+<p><br></p>
+<div class="fragment fade-in">
+<p>Fade in</p>
+</div>
+<div class="fragment fade-up">
+<p>Slide up while fading in</p>
+</div>
+<div class="fragment fade-left">
+<p>Slide left while fading in</p>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<p>Fade in then semi out</p>
+</div>
+<div class="fragment">
+<div class="fragment">
+<p><span class="strike">Strike</span></p>
+</div>
+<div class="fragment">
+<p><span class="text-color-highlight-secondary">Highlight by color</span></p>
+</div>
 <div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations">Code Animations</a></p>
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#fragments">Fragments</a></p>
+</div>
 </div>
 </section>
-<section id="line-highlighting" class="slide level2">
-<h2>Line Highlighting</h2>
-<ul>
-<li>Highlight specific lines for emphasis</li>
-<li>Incrementally highlight additional lines</li>
-</ul>
-<div class="sourceCode" id="cb3" data-code-line-numbers="4-5|7|10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb3-5"><a href="#cb3-5"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb3-6"><a href="#cb3-6"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb3-7"><a href="#cb3-7"></a>ax.plot(theta, r)</span>
-<span id="cb3-8"><a href="#cb3-8"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb3-9"><a href="#cb3-9"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb3-10"><a href="#cb3-10"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#line-highlighting">Line Highlighting</a></p>
-</div>
-</section>
-<section id="executable-code" class="slide level2">
-<h2>Executable Code</h2>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(hp, mpg, <span class="at">color =</span> am)) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#executable-code">Executable Code</a></p>
-</div>
-</section>
-<section id="column-layout" class="slide level2 smaller">
+<section id="column-layout" class="slide level2">
 <h2>Column Layout</h2>
 <p>Arrange content into columns of varying widths:</p>
 <div class="columns">
@@ -575,70 +549,96 @@
 <div class="footer">
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#multiple-columns">Multiple Columns</a></p>
 </div>
-</section>
-<section id="images" class="slide level2">
-<h2>Images</h2>
-<p>Images can be included in slides using <code>knitr::include_graphics()</code></p>
+</section></section>
+<section>
+<section id="code" class="title-slide slide level1 title center">
+<h1><span class="bold r-fit-text">Code</span></h1>
 
-<img data-src="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/presentations/revealjs/demo/mini/images/kitten-300-200.jpeg" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
-<section id="incremental-lists" class="slide level2">
-<h2>Incremental Lists</h2>
-<p>Lists can optionally be displayed incrementally:</p>
-<div>
+</section>
+<section id="pretty-code" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pretty Code</h2>
 <ul>
-<li class="fragment">First item</li>
-<li class="fragment">Second item</li>
-<li class="fragment">Third item</li>
+<li>Over 20 syntax highlighting themes available</li>
+<li>Default theme optimized for accessibility</li>
 </ul>
-</div>
-<div class="fragment">
-<p><br> Insert pauses to make other types of content display incrementally.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="co"># Define a server for the Shiny app</span></span>
+<span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a><span class="cf">function</span>(input, output) {</span>
+<span id="cb1-3" class="hljs-ln-code"><a href="#cb1-3"></a>  </span>
+<span id="cb1-4" class="hljs-ln-code"><a href="#cb1-4"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
+<span id="cb1-5" class="hljs-ln-code"><a href="#cb1-5"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb1-6" class="hljs-ln-code"><a href="#cb1-6"></a>    <span class="co"># Render a barplot</span></span>
+<span id="cb1-7" class="hljs-ln-code"><a href="#cb1-7"></a>  })</span>
+<span id="cb1-8" class="hljs-ln-code"><a href="#cb1-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#incremental-lists">Incremental Lists</a></p>
-</div>
+<p>Learn more: <a href="https://quarto.org/docs/output-formats/html-code.html#highlighting">Syntax Highlighting</a></p>
 </div>
 </section>
-<section id="fragments" class="slide level2">
-<h2>Fragments</h2>
-<p>Incremental text display and animation with fragments:</p>
-<p><br></p>
-<div class="fragment fade-in">
-<p>Fade in</p>
-</div>
-<div class="fragment fade-up">
-<p>Slide up while fading in</p>
-</div>
-<div class="fragment fade-left">
-<p>Slide left while fading in</p>
-</div>
-<div class="fragment fade-in-then-semi-out">
-<p>Fade in then semi out</p>
-</div>
-<div class="fragment">
-<div class="fragment">
-<p><span class="strike">Strike</span></p>
-</div>
-<div class="fragment">
-<p><span class="text-color-highlight-secondary">Highlight by color</span></p>
-</div>
+<section id="code-animations" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Code Animations</h2>
+<ul>
+<li>Over 20 syntax highlighting themes available</li>
+<li>Default theme optimized for accessibility</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="co"># Define a server for the Shiny app</span></span>
+<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a><span class="cf">function</span>(input, output) {</span>
+<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>  </span>
+<span id="cb2-4" class="hljs-ln-code"><a href="#cb2-4"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
+<span id="cb2-5" class="hljs-ln-code"><a href="#cb2-5"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb2-6" class="hljs-ln-code"><a href="#cb2-6"></a>    <span class="co"># Render a barplot</span></span>
+<span id="cb2-7" class="hljs-ln-code"><a href="#cb2-7"></a>    <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
+<span id="cb2-8" class="hljs-ln-code"><a href="#cb2-8"></a>            <span class="at">main=</span>input<span class="sc">$</span>region,</span>
+<span id="cb2-9" class="hljs-ln-code"><a href="#cb2-9"></a>            <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
+<span id="cb2-10" class="hljs-ln-code"><a href="#cb2-10"></a>            <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
+<span id="cb2-11" class="hljs-ln-code"><a href="#cb2-11"></a>  })</span>
+<span id="cb2-12" class="hljs-ln-code"><a href="#cb2-12"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#fragments">Fragments</a></p>
-</div>
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations">Code Animations</a></p>
 </div>
 </section>
-<section id="slide-backgrounds" class="slide level2 inverse">
-<h2>Slide Backgrounds</h2>
-<p>Set the <code>$color-primary</code> and <code>$color-secondary</code> variables in the <code>custom_theme.scss</code> file to change the slide background colors.</p>
-<p>This slide is using the <code>.inverse</code> class to invert the text color.</p>
-<p>Different background transitions are available via the <code>background-transition</code> option.</p>
-</section>
-<section id="section-1" class="slide level2 title">
-<h2></h2>
-<div class="r-fit-text">
-<p><br></p>
-<p><span class="bold">Title/Section Slide</span></p>
+<section id="line-highlighting" class="slide level2">
+<h2>Line Highlighting</h2>
+<ul>
+<li>Highlight specific lines for emphasis</li>
+<li>Incrementally highlight additional lines</li>
+</ul>
+<div class="sourceCode" id="cb3" data-code-line-numbers="4-5|7|10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb3-6"><a href="#cb3-6"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb3-7"><a href="#cb3-7"></a>ax.plot(theta, r)</span>
+<span id="cb3-8"><a href="#cb3-8"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb3-9"><a href="#cb3-9"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb3-10"><a href="#cb3-10"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#line-highlighting">Line Highlighting</a></p>
 </div>
-<p>This slide is using the <code>.title</code> class change the background color toS use the <code>$headingColor</code>.</p>
+</section>
+<section id="executable-code" class="slide level2">
+<h2>Executable Code</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(hp, mpg, <span class="at">color =</span> am)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#executable-code">Executable Code</a></p>
+</div>
+</section></section>
+<section>
+<section id="images" class="title-slide slide level1 title center">
+<h1><span class="bold r-fit-text">Images</span></h1>
+
+</section>
+<section id="simple-image" class="slide level2">
+<h2>Simple image</h2>
+
+<img data-src="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/presentations/revealjs/demo/mini/images/kitten-300-200.jpeg" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Images can be included in slides using <code>knitr::include_graphics()</code></p>
+</div>
 </section>
 <section id="media-backgrounds" class="slide level2" data-background-image="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/presentations/revealjs/demo/images/milky-way.jpeg">
 <h2>Media Backgrounds</h2>
@@ -663,6 +663,11 @@
 <div class="footer">
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#absolute-position">Absolute Position</a></p>
 </div>
+</section></section>
+<section>
+<section id="advanced-functions" class="title-slide slide level1 title center">
+<h1><span class="bold r-fit-text">Advanced functions</span></h1>
+
 </section>
 <section id="auto-animate" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title">Auto-Animate</h2>
@@ -698,51 +703,6 @@
 </div>
 <div class="footer">
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate">Auto-Animate</a></p>
-</div>
-</section>
-<section id="slide-transitions" class="slide level2 smaller">
-<h2>Slide Transitions</h2>
-<p>The next few slides will transition using the <code>slide</code> transition</p>
-<table>
-<colgroup>
-<col style="width: 14%">
-<col style="width: 85%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Transition</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>none</code></td>
-<td>No transition (default, switch instantly)</td>
-</tr>
-<tr class="even">
-<td><code>fade</code></td>
-<td>Cross fade</td>
-</tr>
-<tr class="odd">
-<td><code>slide</code></td>
-<td>Slide horizontally</td>
-</tr>
-<tr class="even">
-<td><code>convex</code></td>
-<td>Slide at a convex angle</td>
-</tr>
-<tr class="odd">
-<td><code>concave</code></td>
-<td>Slide at a concave angle</td>
-</tr>
-<tr class="even">
-<td><code>zoom</code></td>
-<td>Scale the incoming slide so it grows in from the center of the screen.</td>
-</tr>
-</tbody>
-</table>
-<div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions">Slide Transitions</a></p>
 </div>
 </section>
 <section id="tabsets" class="slide level2 smaller scrollable" data-transition="slide">
@@ -1260,8 +1220,8 @@
 <p>Include Jupyter widgets and htmlwidgets in your presentations</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-8a49870e961a27b7c816" style="width:100%;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8a49870e961a27b7c816">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-0a6bc5e01de07147ed2d" style="width:100%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-0a6bc5e01de07147ed2d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="footer">
@@ -1278,10 +1238,72 @@
 <div class="footer">
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#preview-links">Preview Links</a></p>
 </div>
-</section>
-<section id="themes" class="slide level2">
-<h2>Themes</h2>
+</section></section>
+<section>
+<section id="themes" class="title-slide slide level1 title center">
+<h1><span class="bold r-fit-text">Themes</span></h1>
 <p>Udpate the theme in <strong><code>custom_theme.scss</code></strong> file to change the look and feel of your presentation.</p>
+</section>
+<section id="color-palette" class="slide level2">
+<h2>Color palette</h2>
+<p>Fot this presnetation, default color palette is:.</p>
+
+<img data-src="color_palette.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="slide-backgrounds" class="slide level2 inverse">
+<h2>Slide Backgrounds</h2>
+<p>Set the <code>$color-primary</code> and <code>$color-secondary</code> variables in the <code>custom_theme.scss</code> file to change the slide background colors.</p>
+<p>This slide is using the <code>.inverse</code> class to invert the text color.</p>
+<p>Different background transitions are available via the <code>background-transition</code> option.</p>
+</section>
+<section id="slide-transitions" class="slide level2 smaller">
+<h2>Slide Transitions</h2>
+<p>The next few slides will transition using the <code>slide</code> transition</p>
+<table>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 85%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Transition</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>none</code></td>
+<td>No transition (default, switch instantly)</td>
+</tr>
+<tr class="even">
+<td><code>fade</code></td>
+<td>Cross fade</td>
+</tr>
+<tr class="odd">
+<td><code>slide</code></td>
+<td>Slide horizontally</td>
+</tr>
+<tr class="even">
+<td><code>convex</code></td>
+<td>Slide at a convex angle</td>
+</tr>
+<tr class="odd">
+<td><code>concave</code></td>
+<td>Slide at a concave angle</td>
+</tr>
+<tr class="even">
+<td><code>zoom</code></td>
+<td>Scale the incoming slide so it grows in from the center of the screen.</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions">Slide Transitions</a></p>
+</div>
+</section></section>
+<section>
+<section id="presentation-tools" class="title-slide slide level1 title center">
+<h1><span class="bold r-fit-text">Presentation tools</span></h1>
+
 </section>
 <section id="easy-navigation" class="slide level2">
 <h2>Easy Navigation</h2>
@@ -1350,13 +1372,23 @@
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#speaker-view">Speaker View</a></p>
 </div>
 </section>
-<section id="section-2" class="slide level2 title">
-<h2></h2>
+<section id="exercise---example" class="slide level2 exercise textcenter">
+<h2><span class="r-fit-text">Exercise - example</span></h2>
 <div class="r-fit-text">
-<p>Excercise 1</p>
 <p>(you can add countdown timer to the slide)</p>
-<p></p><div class="countdown" id="timer_d86e6056" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div><p></p>
 </div>
+<p></p><div class="countdown" id="timer_2742c2d2" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div><p></p>
+</section></section>
+<section id="references" class="title-slide slide level1 title center">
+<h1><span class="bold r-fit-text">References</span></h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><a href="https://github.com/OndrejMottl/quarto_revealjs_template">😸 Code on GitHub</a></p>
+</div><div class="column" style="width:50%;">
+<p><a href="https://ondrejmottl.github.io/quarto_revealjs_template/">🖥️ Slides</a></p>
+</div>
+</div>
+<p>Author: <a href="https://ondrejmottl.github.io/">Ondrej Mottl</a></p>
 <div class="footer footer-default">
 <p>&lt;bit.ly/SSoQE&gt;</p>
 </div>
