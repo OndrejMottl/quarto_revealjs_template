@@ -28,14 +28,7 @@ library(countdown)
 
 ```
 
-## {.textcenter}
-
-::: r-fit-text
-<br>
-
-[Presentation title]{.bold}
-
-:::
+# [Presentation title]{.bold .r-fit-text} {.inverse}
 
 Author name
 
@@ -49,6 +42,91 @@ This presentation will show you examples of what you can do with Quarto and [Rev
 -   Printing to PDF
 
 ...and much more
+
+# [Title/Section Slide]{.bold .r-fit-text} {.title}
+
+This slide is using the `.title` class change the background color toS use the `$headingColor`.
+
+## Incremental Lists
+
+Lists can optionally be displayed incrementally:
+
+::: incremental
+-   First item
+-   Second item
+-   Third item
+:::
+
+. . .
+
+<br/> Insert pauses to make other types of content display incrementally.
+
+::: footer
+Learn more: [Incremental Lists](https://quarto.org/docs/presentations/revealjs/#incremental-lists)
+:::
+
+## Fragments
+
+Incremental text display and animation with fragments:
+
+<br/>
+
+::: {.fragment .fade-in}
+Fade in
+:::
+
+::: {.fragment .fade-up}
+Slide up while fading in
+:::
+
+::: {.fragment .fade-left}
+Slide left while fading in
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+Fade in then semi out
+:::
+
+. . .
+
+::: {.fragment}
+[Strike]{.strike}
+:::
+
+::: {.fragment}
+[Highlight by color]{.text-color-highlight-secondary}
+:::
+
+::: footer
+Learn more: [Fragments](https://quarto.org/docs/presentations/revealjs/advanced.html#fragments)
+:::
+
+## Column Layout
+
+Arrange content into columns of varying widths:
+
+:::: columns
+::: {.column width="35%"}
+#### Motor Trend Car Road Tests
+
+The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles.
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="62%"}
+```{r}
+knitr::kable(head(mtcars)[,c("mpg",	"cyl", "disp", "hp", "wt")])
+```
+:::
+::::
+
+::: footer
+Learn more: [Multiple Columns](https://quarto.org/docs/presentations/revealjs/#multiple-columns)
+:::
+
+# [Code]{.bold .r-fit-text} {.title}
 
 ## Pretty Code {auto-animate="true"}
 
@@ -132,34 +210,9 @@ ggplot(mtcars, aes(hp, mpg, color = am)) +
 Learn more: [Executable Code](https://quarto.org/docs/presentations/revealjs/#executable-code)
 :::
 
-## Column Layout {.smaller}
+# [Images]{.bold .r-fit-text} {.title}
 
-Arrange content into columns of varying widths:
-
-::: columns
-::: {.column width="35%"}
-#### Motor Trend Car Road Tests
-
-The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles.
-:::
-
-::: {.column width="3%"}
-:::
-
-::: {.column width="62%"}
-```{r}
-knitr::kable(head(mtcars)[,c("mpg",	"cyl", "disp", "hp", "wt")])
-```
-:::
-:::
-
-::: footer
-Learn more: [Multiple Columns](https://quarto.org/docs/presentations/revealjs/#multiple-columns)
-:::
-
-## Images
-
-Images can be included in slides using `knitr::include_graphics()`
+## Simple image
 
 ```{r}
 #| label: knitr-image
@@ -168,78 +221,9 @@ Images can be included in slides using `knitr::include_graphics()`
 knitr::include_graphics("https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/presentations/revealjs/demo/mini/images/kitten-300-200.jpeg")
 ```
 
-## Incremental Lists
-
-Lists can optionally be displayed incrementally:
-
-::: incremental
--   First item
--   Second item
--   Third item
-:::
-
-. . .
-
-<br/> Insert pauses to make other types of content display incrementally.
-
 ::: footer
-Learn more: [Incremental Lists](https://quarto.org/docs/presentations/revealjs/#incremental-lists)
+Images can be included in slides using `knitr::include_graphics()`
 :::
-
-## Fragments
-
-Incremental text display and animation with fragments:
-
-<br/>
-
-::: {.fragment .fade-in}
-Fade in
-:::
-
-::: {.fragment .fade-up}
-Slide up while fading in
-:::
-
-::: {.fragment .fade-left}
-Slide left while fading in
-:::
-
-::: {.fragment .fade-in-then-semi-out}
-Fade in then semi out
-:::
-
-. . .
-
-::: {.fragment}
-[Strike]{.strike}
-:::
-
-::: {.fragment}
-[Highlight by color]{.text-color-highlight-secondary}
-:::
-
-::: footer
-Learn more: [Fragments](https://quarto.org/docs/presentations/revealjs/advanced.html#fragments)
-:::
-
-## Slide Backgrounds {.inverse}
-
-Set the `$color-primary` and `$color-secondary` variables in the `custom_theme.scss` file to change the slide background colors.
-
-This slide is using the `.inverse` class to invert the text color.
-
-Different background transitions are available via the `background-transition` option.
-
-##  {.title}
-
-::: r-fit-text
-<br>
-
-[Title/Section Slide]{.bold}
-
-:::
-
-This slide is using the `.title` class change the background color toS use the `$headingColor`.
 
 ## Media Backgrounds {background-image="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/presentations/revealjs/demo/images/milky-way.jpeg"}
 
@@ -272,6 +256,8 @@ Position images or other elements at precise locations
 ::: footer
 Learn more: [Absolute Position](https://quarto.org/docs/presentations/revealjs/advanced.html#absolute-position)
 :::
+
+# [Advanced functions]{.bold .r-fit-text} {.title}
 
 ## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"}
 
@@ -309,23 +295,6 @@ Automatically animate matching elements across slides with Auto-Animate.
 
 ::: footer
 Learn more: [Auto-Animate](https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate)
-:::
-
-## Slide Transitions {.smaller}
-
-The next few slides will transition using the `slide` transition
-
-| Transition | Description                                                            |
-|------------|------------------------------------------------------------------------|
-| `none`     | No transition (default, switch instantly)                              |
-| `fade`     | Cross fade                                                             |
-| `slide`    | Slide horizontally                                                     |
-| `convex`   | Slide at a convex angle                                                |
-| `concave`  | Slide at a concave angle                                               |
-| `zoom`     | Scale the incoming slide so it grows in from the center of the screen. |
-
-::: footer
-Learn more: [Slide Transitions](https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions)
 :::
 
 ## Tabsets {.smaller .scrollable transition="slide"}
@@ -368,7 +337,6 @@ leaflet() %>%
 Learn more: [Jupyter widgets](https://quarto.org/docs/interactive/widgets/jupyter.html), [htmlwidgets](https://quarto.org/docs/interactive/widgets/htmlwidgets.html)
 :::
 
-
 ## Preview Links
 
 Navigate to hyperlinks without disrupting the flow of your presentation.
@@ -383,10 +351,48 @@ Use the `preview-links` option to open links in an iframe on top of your slides.
 Learn more: [Preview Links](https://quarto.org/docs/presentations/revealjs/presenting.html#preview-links)
 :::
 
-## Themes
+# [Themes]{.bold .r-fit-text} {.title}
 
 Udpate the theme in **`custom_theme.scss`** file to change the look and feel of your presentation.
 
+## Color palette
+
+Fot this presnetation, default color palette is:.
+
+```{r}
+#| label: color-palette
+#| width: 700
+#| fig-align: 'center'
+knitr::include_graphics("color_palette.png")
+```
+
+
+## Slide Backgrounds {.inverse}
+
+Set the `$color-primary` and `$color-secondary` variables in the `custom_theme.scss` file to change the slide background colors.
+
+This slide is using the `.inverse` class to invert the text color.
+
+Different background transitions are available via the `background-transition` option.
+
+## Slide Transitions {.smaller}
+
+The next few slides will transition using the `slide` transition
+
+| Transition | Description                                                            |
+|------------|------------------------------------------------------------------------|
+| `none`     | No transition (default, switch instantly)                              |
+| `fade`     | Cross fade                                                             |
+| `slide`    | Slide horizontally                                                     |
+| `convex`   | Slide at a convex angle                                                |
+| `concave`  | Slide at a concave angle                                               |
+| `zoom`     | Scale the incoming slide so it grows in from the center of the screen. |
+
+::: footer
+Learn more: [Slide Transitions](https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions)
+:::
+
+# [Presentation tools]{.bold .r-fit-text} {.title}
 
 ## Easy Navigation
 
@@ -452,14 +458,28 @@ Press `s` (or use the presentation menu) to open speaker view
 Learn more: [Speaker View](https://quarto.org/docs/presentations/revealjs/presenting.html#speaker-view)
 :::
 
-## {.title}
+## [Exercise - example]{.r-fit-text} {.exercise .textcenter}
 
-::: r-fit-text
-
-Excercise 1 
-
+:::{.r-fit-text}
 (you can add countdown timer to the slide)
-
-`r countdown(minutes = 15)`
-
 :::
+
+`r countdown(minutes = 5)`
+
+
+# [References]{.bold .r-fit-text} {.title}
+
+:::: columns
+::: {.column width="50%"}
+[😸 Code on GitHub](https://github.com/OndrejMottl/quarto_revealjs_template)
+:::
+
+::: {.column width="50%"}
+[🖥️ Slides](https://ondrejmottl.github.io/quarto_revealjs_template/)
+:::
+::::
+
+Author: [Ondrej Mottl](https://ondrejmottl.github.io/)
+
+
+
