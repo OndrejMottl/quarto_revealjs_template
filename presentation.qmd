@@ -8,7 +8,6 @@ format:
     preview-links: auto
     output-file: "index"
     output-ext: "html"
-    footer: <bit.ly/SSoQE>
 ---
 
 ```{r}
@@ -36,10 +35,10 @@ Author name
 
 This presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including:
 
--   Presenting code and LaTeX equations
+-   Presenting text and code 
+-   Including figures
 -   Including computations in slide output
 -   Fancy transitions and animations
--   Printing to PDF
 
 ...and much more
 
