@@ -27,7 +27,7 @@ library(countdown)
 
 ```
 
-# [Presentation title]{.bold .r-fit-text} {.inverse}
+# [Presentation title]{.bold .r-fit-text} {.title}
 
 Author name
 
@@ -42,9 +42,9 @@ This presentation will show you examples of what you can do with Quarto and [Rev
 
 ...and much more
 
-# [Title/Section Slide]{.bold .r-fit-text} {.title}
+# [Section Slide]{.bold .r-fit-text} {.subtitle}
 
-This slide is using the `.title` class change the background color toS use the `$headingColor`.
+This slide is using the `.subtitle` class change the background color toS use the `$headingColor`.
 
 ## Incremental Lists
 
@@ -230,11 +230,11 @@ Images can be included in slides using `knitr::include_graphics()`
 
 You can also use the following as a slide background:
 
--   An image: [background-image]{.text-color-highlight-terciary}
+-   An image: [background-image]{.text-color-highlight-tertiary}
 
--   A video: [background-video]{.text-color-highlight-terciary}
+-   A video: [background-video]{.text-color-highlight-tertiary}
 
--   An iframe: [background-iframe]{.text-color-highlight-terciary}
+-   An iframe: [background-iframe]{.text-color-highlight-tertiary}
 
 :::
 
@@ -366,11 +366,11 @@ knitr::include_graphics("color_palette.png")
 ```
 
 
-## Slide Backgrounds {.inverse}
+## [Slide Backgrounds]{.bold .r-fit-text} {.subtitle}
 
 Set the `$color-primary` and `$color-secondary` variables in the `custom_theme.scss` file to change the slide background colors.
 
-This slide is using the `.inverse` class to invert the text color.
+This slide is using the `.subtitle` class to adjust the text color.
 
 Different background transitions are available via the `background-transition` option.
 

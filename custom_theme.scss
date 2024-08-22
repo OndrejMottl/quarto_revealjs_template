@@ -2,13 +2,16 @@
 
 @import url(./fonts/league-gothic/league-gothic.css);
 @import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic);
 
 // Vertical spacing between blocks of text
-$blockMargin: 20px;
+$smallMargin: 5px;
+$blockMargin: 10px;
+$largeMargin: 20px;
 
-// colors
+// Colors
 $black: #000000ff;
+$gray: #808080ff;
 $byzantium: #8f286fff;
 $harvest-gold: #eca400ff;
 $persian-green: #1b998bff;
@@ -20,12 +23,12 @@ $color-secondary: $white !default;
 
 $color-high-primary: $byzantium !default;
 $color-high-secondary: $harvest-gold !default;
-$color-high-terciary: $persian-green !default;
+$color-high-tertiary: $persian-green !default;
 
 $body-color: $color-primary !default;
-$link-color: $color-high-terciary !default;
-$selection-bg: $color-high-terciary !default;
-$code-color:  $color-primary !default;
+$link-color: $color-high-tertiary !default;
+$selection-bg: $color-high-tertiary !default;
+$code-color: $color-primary !default;
 
 // Background of the presentation
 $backgroundColor: $color-secondary !default;
@@ -33,8 +36,8 @@ $backgroundColor: $color-secondary !default;
 // Typography
 $mainFont: "Lato", sans-serif !default;
 $mainFontSize: 30px;
+$body-line-height: 1.5;
 
-// Headings
 $headingMargin: 0;
 $headingFont: "League Gothic", sans-serif !default;
 $headingColor: $color-high-primary;
@@ -43,14 +46,37 @@ $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingTextShadow: none;
 $headingFontWeight: normal;
-$heading1TextShadow: $headingTextShadow;
 
 $heading1Size: 3.77em;
+$heading1TextShadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 $heading2Size: 2.11em;
 $heading3Size: 1.55em;
 $heading4Size: 1em;
 
+// Layout
+$content-max-width: 900px;
+
 /*-- scss:rules --*/
+
+/* General text styling */
+body {
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  line-height: $body-line-height;
+  color: $body-color;
+  background-color: $backgroundColor;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken($link-color, 10%);
+    text-decoration: underline;
+  }
+}
 
 .bold {
   font-weight: bold;
@@ -68,7 +94,7 @@ $heading4Size: 1em;
   text-decoration: line-through;
 }
 
-.text-color-primary{
+.text-color-primary {
   color: $color-primary;
 }
 
@@ -77,23 +103,80 @@ $heading4Size: 1em;
 }
 
 .text-color-highlight-primary {
-  color: $color-high-primary;
+  background-color: $color-high-primary;
+  color: $white;
 }
 
 .text-color-highlight-secondary {
-  color: $color-high-secondary;
+  background-color: $color-high-secondary;
+  color: $white;
 }
 
-.text-color-highlight-terciary {
-  color: $color-high-terciary;
+.text-color-highlight-tertiary {
+  background-color: $color-high-tertiary;
+  color: $white;
 }
 
 .textcenter {
   text-align: center;
 }
 
+/* Headings */
+h1,
+.reveal h1 {
+  font-family: $headingFont;
+  font-size: $heading1Size;
+  color: $headingColor;
+  line-height: $headingLineHeight;
+  letter-spacing: $headingLetterSpacing;
+  text-transform: $headingTextTransform;
+  text-shadow: $heading1TextShadow;
+  font-weight: $headingFontWeight;
+  margin: $headingMargin;
+}
+
+h2,
+.reveal h2 {
+  font-family: $headingFont;
+  font-size: $heading2Size;
+  color: $headingColor;
+  line-height: $headingLineHeight;
+  letter-spacing: $headingLetterSpacing;
+  text-transform: $headingTextTransform;
+  font-weight: $headingFontWeight;
+  margin: $headingMargin;
+}
+
+
+/* Slide content layout */
+.reveal .slides {
+  max-width: $content-max-width;
+  margin: auto;
+  padding: 0 $smallMargin;
+}
+
+/* Constrain figures and other large block elements */
+.reveal .slides img,
+.reveal .slides figure,
+.reveal .slides video,
+.reveal .slides .reveal-image {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Specialised sections */
 .reveal .title {
   background-color: $headingColor;
+  color: $backgroundColor;
+  text-align: center;
+}
+
+.reveal .subtitle {
+  background-color: $color-high-secondary;
   color: $backgroundColor;
   text-align: center;
 }
@@ -103,7 +186,34 @@ $heading4Size: 1em;
   background-color: $color-primary;
 }
 
-.reveal .exercise{
-  background-color: $color-high-secondary;
+.reveal .exercise {
+  background-color: $color-high-tertiary;
   color: $color-secondary;
+}
+
+/* Blockquote */
+.reveal .blockquote {
+  font-style: italic;
+  border-left: 6px solid $color-high-primary;
+  padding: $smallMargin;
+  border-radius: 25px;
+  border-top: 3px solid $gray;
+  border-bottom: 3px solid $gray;
+  border-right: 3px solid $gray;
+  background-color: $color-secondary;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Code block */
+code {
+  background-color: darken($backgroundColor, 20%);
+  padding: $smallMargin;
+  border-radius: 5px;
+}
+
+/* List styling */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: $blockMargin;
 }
