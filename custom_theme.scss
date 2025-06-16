@@ -75,6 +75,26 @@ a {
   }
 }
 
+// Prevent code blocks from inheriting link styles
+code a,
+pre a {
+  background: none !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Code block */
+code {
+  background-color: lighten($grey, 30%) !important;
+  padding: $smallMargin;
+  border-radius: 5px;
+  font-size: $mainFontSize / 2.5;
+  line-height: 1;
+}
+
+
 /* Headings */
 h1 {
   font-family: $headingFont;
@@ -122,14 +142,6 @@ h4 {
   color: $body-color;
 }
 
-/* Code block */
-code {
-  background-color: lighten($grey, 10%) !important;
-  padding: $smallMargin;
-  border-radius: 5px;
-  font-size: $mainFontSize / 2.5;
-  line-height: 1;
-}
 
 
 /* List styling */
