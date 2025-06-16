@@ -1,7 +1,6 @@
 /*-- scss:defaults --*/
 
-@import url(./fonts/league-gothic/league-gothic.css);
-@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+@import url(https://fonts.googleapis.com/css?family=League+Gothic);
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic);
 
 // Vertical spacing between blocks of text
@@ -9,43 +8,26 @@ $smallMargin: 5px;
 $blockMargin: 10px;
 $largeMargin: 20px;
 
-// Colors
-$black: #000000ff;
-$gray: #808080ff;
-$byzantium: #8f286fff;
-$harvest-gold: #eca400ff;
-$persian-green: #1b998bff;
-$cerulean: #006992ff;
-$white: #ffffffff;
+// Colors are now loaded from _colors.scss, which is auto-generated from colors.json.
+// Do not define color variables here. Edit colors.json and regenerate _colors.scss if needed.
+@import "_colors";
 
-$color-primary: $black !default;
-$color-secondary: $white !default;
-
-$color-high-primary: $byzantium !default;
-$color-high-secondary: $harvest-gold !default;
-$color-high-tertiary: $persian-green !default;
-
-$body-color: $color-primary !default;
-$link-color: $color-high-tertiary !default;
-$selection-bg: $color-high-tertiary !default;
-$code-color: $color-primary !default;
-
-// Background of the presentation
-$backgroundColor: $color-secondary !default;
+$body-color: $black;
+$backgroundColor: $white;
 
 // Typography
 $mainFont: "Lato", sans-serif !default;
 $mainFontSize: 30px;
+$mainFontWeight: 400;
 $body-line-height: 1.5;
 
 $headingMargin: 0;
 $headingFont: "League Gothic", sans-serif !default;
-$headingColor: $color-high-primary;
 $headingLineHeight: 1.2;
 $headingLetterSpacing: normal;
-$headingTextTransform: uppercase;
-$headingTextShadow: none;
+$headingFontWeight: 700;
 $headingFontWeight: normal;
+$headingColor: $byzantium;
 
 $heading1Size: 3.77em;
 $heading1TextShadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -56,6 +38,19 @@ $heading4Size: 1em;
 // Layout
 $content-max-width: 900px;
 
+// Mermaid configuration
+$mermaid-bg-color: $white !important;
+$mermaid-edge-color: $black !important;
+$mermaid-node-fg-color: $body-color !important;
+$mermaid-fg-color: $grey !important;
+$mermaid-fg-color--lighter: lighten($grey, 10%) !important;
+$mermaid-fg-color--lightest: lighten($grey, 20%) !important;
+$mermaid-font-family: $mainFont !important;
+$mermaid-label-bg-color: $white !important;
+$mermaid-label-fg-color: $black !important;
+$mermaid-node-bg-color: $white !important;
+
+
 /*-- scss:rules --*/
 
 /* General text styling */
@@ -64,95 +59,295 @@ body {
   font-size: $mainFontSize;
   line-height: $body-line-height;
   color: $body-color;
-  background-color: $backgroundColor;
+  background-color: $backgroundColor !important;
 }
 
 a {
-  color: $link-color;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  padding: $smallMargin;
+  border-radius: 5px;
+  background-color: $persian-green !important;
+  color: $white !important;
+  text-decoration: underline !important;
 
   &:hover {
-    color: darken($link-color, 10%);
-    text-decoration: underline;
+    color: $persian-green !important;
+    background-color: $white !important;
   }
 }
 
-.bold {
-  font-weight: bold;
+// Prevent code blocks from inheriting link styles
+code a,
+pre a {
+  background: none !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
 }
 
-.italic {
-  font-style: italic;
+/* Code block */
+code {
+  background-color: lighten($grey, 30%) !important;
+  padding: $smallMargin;
+  border-radius: 5px;
+  font-size: $mainFontSize / 2.5;
+  line-height: 1;
 }
 
-.underline {
-  text-decoration: underline;
-}
 
-.strike {
-  text-decoration: line-through;
-}
-
-.text-color-primary {
-  color: $color-primary;
-}
-
-.text-color-secondary {
-  color: $color-secondary;
-}
-
-.text-color-highlight-primary {
-  background-color: $color-high-primary;
-  color: $white;
-}
-
-.text-color-highlight-secondary {
-  background-color: $color-high-secondary;
-  color: $white;
-}
-
-.text-color-highlight-tertiary {
-  background-color: $color-high-tertiary;
-  color: $white;
-}
-
-.textcenter {
+/* Headings */
+h1 {
+  font-family: $headingFont;
+  font-size: $heading1Size;
+  line-height: $headingLineHeight;
+  letter-spacing: $headingLetterSpacing;
+  font-weight: $headingFontWeight;
+  margin-top: $headingMargin;
+  color: $headingColor;
+  text-shadow: 3px 4px 5px $black;
   text-align: center;
 }
 
-/* Headings */
-h1,
-.reveal h1 {
-  font-family: $headingFont;
-  font-size: $heading1Size;
-  color: $headingColor;
-  line-height: $headingLineHeight;
-  letter-spacing: $headingLetterSpacing;
-  text-transform: $headingTextTransform;
-  text-shadow: $heading1TextShadow;
-  font-weight: $headingFontWeight;
-  margin: $headingMargin;
-}
-
-h2,
-.reveal h2 {
+h2 {
   font-family: $headingFont;
   font-size: $heading2Size;
-  color: $headingColor;
   line-height: $headingLineHeight;
   letter-spacing: $headingLetterSpacing;
-  text-transform: $headingTextTransform;
   font-weight: $headingFontWeight;
-  margin: $headingMargin;
+  margin-top: $headingMargin;
+  color: $headingColor;
+  text-shadow: 3px 4px 5px $black;
+  text-align: center;
 }
 
+h3 {
+  font-family: $headingFont;
+  font-size: $heading3Size;
+  line-height: $headingLineHeight;
+  letter-spacing: $headingLetterSpacing;
+  font-weight: $headingFontWeight;
+  margin-top: $headingMargin;
+  text-shadow: none;
+  color: $body-color;
+}
+
+h4 {
+  font-family: $headingFont;
+  font-size: $heading4Size;
+  line-height: $headingLineHeight;
+  letter-spacing: $headingLetterSpacing;
+  font-weight: $headingFontWeight;
+  margin-top: $headingMargin;
+  text-shadow: none;
+  color: $body-color;
+}
+
+
+
+/* List styling */
+ul {
+  padding-left: 0;
+  margin-left: $blockMargin;
+}
+
+.text-color-black {
+  color: $black !important;
+}
+
+.text-color-white {
+  color: $white !important;
+}
+
+.text-color-grey {
+  color: $grey !important;
+}
+
+.text-color-byzantium {
+  color: $byzantium !important;
+}
+
+.text-color-harvest-gold {
+  color: $harvest-gold !important;
+}
+
+.text-color-persian-green {
+  color: $persian-green !important;
+}
+
+.text-color-cerulean {
+  color: $cerulean !important;
+}
+
+
+.text-background-black {
+  background-color: $black;
+  color: $white;
+  padding: $smallMargin;
+  border-radius: 5px;
+}
+
+.text-background-white {
+  background-color: $white;
+  color: $black;
+  padding: $smallMargin;
+  border-radius: 5px;
+}
+
+.text-background-grey {
+  background-color: $grey;
+  color: $black;
+  padding: $smallMargin;
+  border-radius: 5px;
+}
+
+.text-background-byzantium {
+  background-color: $byzantium;
+  color: $white;
+  padding: $smallMargin;
+  border-radius: 5px;
+}
+
+.text-background-harvest-gold {
+  background-color: $harvest-gold;
+  color: $black;
+  padding: $smallMargin;
+  border-radius: 5px;
+}
+
+.text-background-persian-green {
+  background-color: $persian-green;
+  color: $white;
+  padding: $smallMargin;
+  border-radius: 5px;
+}
+
+.text-background-cerulean {
+  background-color: $cerulean;
+  color: $white;
+  padding: $smallMargin;
+  border-radius: 5px;
+}
+
+
+.text-color-darker {
+  filter: brightness(50%);
+}
+
+.text-color-brigher {
+  filter: brightness(250%);
+}
+
+.text-font-lato {
+  font-family: "Lato", sans-serif !important;
+  font-weight: $mainFontWeight !important;
+}
+
+.text-font-gothic {
+  font-family: "League Gothic", sans-serif !important;
+  font-weight: $headingFontWeight !important;
+}
+
+.text-size-heading1 {
+  font-size: $heading1Size !important;
+}
+
+.text-size-heading2 {
+  font-size: $heading2Size !important;
+}
+
+.text-size-heading3 {
+  font-size: $heading3Size !important;
+}
+
+.text-size-heading4 {
+  font-size: $heading4Size !important;
+}
+
+.text-size-body {
+  font-size: $mainFontSize !important;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-strike {
+  text-decoration: line-through;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-normal {
+  text-transform: none;
+}
+
+.text-font-body {
+  font-family: $mainFont;
+}
+
+.text-font-heading {
+  font-family: $headingFont;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-smaller {
+  font-size: $mainFontSize * 0.7 !important;
+}
+
+.text-larger {
+  font-size: $mainFontSize * 1.3 !important;
+}
+
+.text-margin-top {
+  margin: 0;
+  position: absolute;
+  top: 25%;
+  -ms-transform: translateY(-25%);
+  transform: translateY(-25%);
+}
 
 /* Slide content layout */
 .reveal .slides {
   max-width: $content-max-width;
   margin: auto;
   padding: 0 $smallMargin;
+}
+
+.center-vertical {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /* Constrain figures and other large block elements */
@@ -169,51 +364,45 @@ h2,
 }
 
 /* Specialised sections */
-.reveal .title {
-  background-color: $headingColor;
-  color: $backgroundColor;
-  text-align: center;
+.reveal .bg-black {
+  background-color: $black;
 }
 
-.reveal .subtitle {
-  background-color: $color-high-secondary;
-  color: $backgroundColor;
-  text-align: center;
+.reveal .bg-white {
+  background-color: $white;
 }
 
-.reveal .inverse {
-  color: $color-secondary;
-  background-color: $color-primary;
+.reveal .bg-grey {
+  background-color: $grey;
 }
 
-.reveal .exercise {
-  background-color: $color-high-tertiary;
-  color: $color-secondary;
+.reveal .bg-byzantium {
+  background-color: $byzantium;
+}
+
+.reveal .bg-harvest-gold {
+  background-color: $harvest-gold;
+}
+
+.reveal .bg-persian-green {
+  background-color: $persian-green;
+}
+
+.reveal .bg-cerulean {
+  background-color: $cerulean;
 }
 
 /* Blockquote */
 .reveal .blockquote {
-  font-style: italic;
-  border-left: 6px solid $color-high-primary;
   padding: $smallMargin;
   border-radius: 25px;
-  border-top: 3px solid $gray;
-  border-bottom: 3px solid $gray;
-  border-right: 3px solid $gray;
-  background-color: $color-secondary;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Code block */
-code {
-  background-color: darken($backgroundColor, 20%);
-  padding: $smallMargin;
-  border-radius: 5px;
-}
-
-/* List styling */
-ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin-left: $blockMargin;
+  // set the background color as semi-transparent white
+  background-color: rgba($white, 0.8);
+  border-left: 6px solid $black;
+  border-top: 3px solid $black;
+  border-bottom: 3px solid $black;
+  border-right: 3px solid $black;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
