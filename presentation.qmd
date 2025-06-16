@@ -252,9 +252,14 @@ Learn more: [Line Highlighting](https://quarto.org/docs/presentations/revealjs/#
 #| fig-width: 10
 #| fig-height: 4.5
 library(ggplot2)
-ggplot(mtcars, aes(hp, mpg, color = am)) +
-  geom_point() +
-  geom_smooth(formula = y ~ x, method = "loess")
+ggplot(
+  data = mtcars,
+  mapping = aes(hp, mpg)) +
+  geom_point(
+    mapping = aes(color = am),
+  ) +
+  geom_smooth(formula = y ~ x, method = "loess", color = colors$`persian-green`) +
+  ggplot2::scale_color_gradient(low = colors$`harvest-gold`, high = colors$`byzantium`) 
 ```
 
 ::: footer
@@ -276,17 +281,17 @@ knitr::include_graphics("https://raw.githubusercontent.com/quarto-dev/quarto-web
 Images can be included in slides using `knitr::include_graphics()`
 :::
 
-## Media Backgrounds {background-image="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/presentations/revealjs/demo/images/milky-way.jpeg"}
+## Media Backgrounds {background-image="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/presentations/revealjs/demo/images/milky-way.jpeg" .text-color-white}
 
 ::: {.text-color-secondary}
 
 You can also use the following as a slide background:
 
--   An image: [background-image]{.text-color-background-byzantium}
+-   An image: [background-image]{.text-background-byzantium}
 
--   A video: [background-video]{.text-color-background-harvest-gold}
+-   A video: [background-video]{.text-background-harvest-gold}
 
--   An iframe: [background-iframe]{.text-color-background-persian-green}
+-   An iframe: [background-iframe]{.text-background-persian-green}
 
 :::
 
@@ -315,13 +320,13 @@ Learn more: [Absolute Position](https://quarto.org/docs/presentations/revealjs/a
 Automatically animate matching elements across slides with Auto-Animate.
 
 ::: r-hstack
-::: {data-id="box1" auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;"}
+::: {data-id="box1" auto-animate-delay="0" style="background: `r colors$'harvest-gold'`; width: 200px; height: 150px; margin: 10px;"}
 :::
 
-::: {data-id="box2" auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;"}
+::: {data-id="box2" auto-animate-delay="0.1" style="background: `r colors$'persian-green'`; width: 200px; height: 150px; margin: 10px;"}
 :::
 
-::: {data-id="box3" auto-animate-delay="0.2" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px;"}
+::: {data-id="box3" auto-animate-delay="0.2" style="background: `r colors$'cerulean'`; width: 200px; height: 150px; margin: 10px;"}
 :::
 :::
 
@@ -334,13 +339,13 @@ Learn more: [Auto-Animate](https://quarto.org/docs/presentations/revealjs/advanc
 Automatically animate matching elements across slides with Auto-Animate.
 
 ::: r-stack
-::: {data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;"}
+::: {data-id="box1" style="background: `r colors$'harvest-gold'`; width: 350px; height: 350px; border-radius: 200px;"}
 :::
 
-::: {data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;"}
+::: {data-id="box2" style="background: `r colors$'persian-green'`; width: 250px; height: 250px; border-radius: 200px;"}
 :::
 
-::: {data-id="box3" style="background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;"}
+::: {data-id="box3" style="background: `r colors$'cerulean'`; width: 150px; height: 150px; border-radius: 200px;"}
 :::
 :::
 
@@ -355,9 +360,14 @@ Learn more: [Auto-Animate](https://quarto.org/docs/presentations/revealjs/advanc
 
 ```{r}
 library(ggplot2)
-ggplot(mtcars, aes(hp, mpg, color = am)) +
-  geom_point() +
-  geom_smooth(formula = y ~ x, method = "loess")
+ggplot(
+  data = mtcars,
+  mapping = aes(hp, mpg)) +
+  geom_point(
+    mapping = aes(color = am),
+  ) +
+  geom_smooth(formula = y ~ x, method = "loess", color = colors$`persian-green`) +
+  ggplot2::scale_color_gradient(low = colors$`harvest-gold`, high = colors$`byzantium`) 
 ```
 
 ### Data
