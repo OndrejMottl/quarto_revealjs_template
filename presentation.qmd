@@ -94,9 +94,9 @@ This presentation will show you examples of what you can do with Quarto and [Rev
 
 ...and much more
 
-# [Section Slide]{.bold .r-fit-text} {.bg-gold .text-center}
+# [Section Slide]{.bold .r-fit-text} {.bg-harvest-gold .text-center}
 
-This slide is using the `.bg-[insert color]` class change the background color (here `.bg-gold`). You can also use the `.text-color-[insert color]` class to change the text color (for example [`.text-color-white`]{.text-color-white}).
+This slide is using the `.bg-[insert color]` class change the background color (here `.bg-harvest-gold`). You can also use the `.text-color-[insert color]` class to change the text color (for example [.text-color-white]{.text-color-white}).
 
 ## Incremental Lists
 
