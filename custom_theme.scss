@@ -60,38 +60,68 @@ body {
   background-color: $backgroundColor !important;
 }
 
-a {
-  padding: $smallMargin;
+
+/* Code */
+
+/* Code styling (default and reveal) */
+pre,
+.reveal pre,
+code,
+.reveal code {
+  background-color: lighten($grey, 30%);
+  color: $black;
   border-radius: 5px;
-  background-color: $persian-green !important;
-  color: $white !important;
-  text-decoration: underline !important;
+}
+
+pre,
+.reveal pre {
+  overflow: auto;
+  padding: $smallMargin;
+}
+
+code,
+.reveal code {
+  padding: 0;
+}
+
+pre code,
+.reveal pre code {
+  background-color: transparent;
+  padding: $smallMargin;
+  position: relative; /* Ensure line highlighting works */
+  z-index: 0; /* Prevent conflicts with overlays */
+}
+
+pre a,
+.reveal pre a,
+code a,
+.reveal code a {
+  color: $black;
+  text-decoration: underline;
 
   &:hover {
-    color: $persian-green !important;
-    background-color: $white !important;
+    color: $persian-green;
+    background-color: $black;
   }
 }
 
-// Prevent code blocks from inheriting link styles
-code a,
-pre a {
-  background: none !important;
-  color: inherit !important;
-  text-decoration: none !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
+a,
+.reveal a,
+.reveal .footer a {
+  color: $persian-green;
+  text-decoration: underline !important;
+
+  &:hover {
+    color: $black !important;
+    background-color: $persian-green !important;
+  }
 }
 
-/* Code block */
-code {
-  background-color: lighten($grey, 30%) !important;
-  padding: $smallMargin;
-  border-radius: 5px;
-  font-size: $mainFontSize / 2.5;
-  line-height: 1;
+/* Fix for code blocks in HTML output */
+.sourceCode {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
-
 
 /* Headings */
 h1 {
@@ -140,11 +170,14 @@ h4 {
   color: $body-color;
 }
 
-
-
+ 
 /* List styling */
 ul {
   padding-left: 0;
+  margin-left: $blockMargin;
+}
+
+ul ul {
   margin-left: $blockMargin;
 }
 
