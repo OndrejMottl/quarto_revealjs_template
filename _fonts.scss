@@ -1,0 +1,12 @@
+// This file is auto-generated from fonts.json. Do not edit directly.
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+@import url(https://fonts.googleapis.com/css?family=League+Gothic);
+
+$mainFont: "Lato", sans-serif !default;
+
+$headingFont: "League Gothic", sans-serif !default;
+
+.text-font-body { font-family: $mainFont; }
+.text-font-heading { font-family: $headingFont; }
+

@@ -35,19 +35,18 @@ library(countdown)
 if (!require("here")) install.packages("here")
 library(here)
 
-# Load colors from JSON
+
 if (!require("jsonlite")) install.packages("jsonlite")
 library(jsonlite)
 
-if(!require("qrcode")) install.packages("qrcode")
+if (!require("tidyverse")) install.packages("tidyverse")
+library(tidyverse)
+
+if (!require("qrcode")) install.packages("qrcode")
 library(qrcode)
 
-if(!require("cropcircles")) install.packages("cropcircles")
+if (!require("cropcircles")) install.packages("cropcircles")
 library(cropcircles)
-
-if(!require("countdown")) install.packages("countdown")
-
-library(countdown)
 
 include_local_figure <- function(data_source) {
   knitr::include_graphics(
@@ -62,24 +61,83 @@ include_local_figure <- function(data_source) {
 
 
 ```{r}
-#| label: colors
+#| label: dynamic-theme
 #| include: false
 library(jsonlite)
 
-colors <- 
-  jsonlite::fromJSON("colors.json")
+# Colors
+
+colors <-
+  jsonlite::fromJSON(
+    here::here("colors.json")
+  )
+
+colors_definition <-
+  purrr::imap(
+    .x = colors,
+    .f = ~ {
+      paste0(
+        "$", .y, ": ", unname(.x), ";", "\n",
+        ".reveal .bg-", .y, " { background-color: ", unname(.x), "; }\n",
+        ".text-color-", .y, " { color: ", unname(.x), "; }\n",
+        ".text-background-", .y, " {\n",
+        "background-color: ", unname(.x), ";\n",
+        "padding: $smallMargin;\n",
+        "border-radius: 5px;\n",
+        " }", "\n"
+      )
+    }
+  ) %>%
+  paste(collapse = "\n")
+
 
 writeLines(
   text = c(
     "// This file is auto-generated from colors.json. Do not edit directly.",
-    paste0("$", names(colors), ": ", unname(colors), ";")
+    colors_definition
   ),
   con = here::here("_colors.scss")
 )
+
+# Fonts
+
+fonts <-
+  jsonlite::fromJSON(
+    here::here("fonts.json")
+  )
+
+fonts_definition <-
+  c(
+    paste0(
+      "@import url(https://fonts.googleapis.com/css?family=",
+      stringr::str_replace_all(fonts$body, " ", "+"),
+      ");\n"
+    ),
+    paste0(
+      "@import url(https://fonts.googleapis.com/css?family=",
+      stringr::str_replace_all(fonts$heading, " ", "+"),
+      ");\n"
+    ),
+    paste0('$mainFont: "', fonts$body, '", sans-serif !default;\n'),
+    paste0('$headingFont: "', fonts$heading, '", sans-serif !default;\n'),
+    paste0(
+      ".text-font-body { font-family: $mainFont; }\n",
+      ".text-font-heading { font-family: $headingFont; }\n"
+    )
+  )
+
+writeLines(
+  text = c(
+    "// This file is auto-generated from fonts.json. Do not edit directly.",
+    fonts_definition
+  ),
+  con = here::here("_fonts.scss")
+)
+
 ```
 
 
-# [Presentation title]{.bold .r-fit-text} {.bg-byzantium .text-center}
+# [Presentation title]{.bold .r-fit-text} {.bg-byzantium .text-center .text-color-white}
 
 Author name
 
@@ -141,11 +199,11 @@ Fade in then semi out
 . . .
 
 ::: {.fragment}
-[Strike]{.strike}
+[Strike]{.text-strike}
 :::
 
 ::: {.fragment}
-[Highlight by color]{.text-background-byzantium}
+[Highlight by color]{.text-background-byzantium .text-color-white}
 :::
 
 ::: footer
@@ -228,7 +286,7 @@ Learn more: [Code Animations](https://quarto.org/docs/presentations/revealjs/adv
 -   Highlight specific lines for emphasis
 -   Incrementally highlight additional lines
 
-``` {.python code-line-numbers="4-5|7|10"}
+``` {.python code-line-numbers="1-10|4-5|7|10"}
 import numpy as np
 import matplotlib.pyplot as plt
 
