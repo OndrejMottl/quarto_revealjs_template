@@ -286,7 +286,7 @@ Learn more: [Code Animations](https://quarto.org/docs/presentations/revealjs/adv
 -   Highlight specific lines for emphasis
 -   Incrementally highlight additional lines
 
-``` {.python code-line-numbers="4-5|7|10"}
+``` {.python code-line-numbers="1-10|4-5|7|10"}
 import numpy as np
 import matplotlib.pyplot as plt
 
